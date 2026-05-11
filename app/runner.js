@@ -26,17 +26,47 @@ function renderInlineMarkup(text = "") {
 function normalizeQuestion(q) {
   const choices = {};
   for (const [k, v] of Object.entries(q.choices || {})) {
-    choices[k] = decodeHtmlEntitiesDeep(v);
+    choices[String(k)] = decodeHtmlEntitiesDeep(v);
   }
+
+  const rawType = String(q.itemType || q.type || "").trim().toLowerCase();
+  const itemType =
+    rawType === "constructed" || rawType === "constructed_response"
+      ? "constructed_response"
+      : "mcq_single";
 
   return {
     ...q,
+    itemType,
+    part: String(q.part || "").trim(),
+    credits: Number(q.credits || 0),
     prompt: decodeHtmlEntitiesDeep(q.prompt || ""),
+    instruction: decodeHtmlEntitiesDeep(q.instruction || ""),
     explanation: decodeHtmlEntitiesDeep(q.explanation || ""),
+    modelAnswer: decodeHtmlEntitiesDeep(q.modelAnswer || ""),
+    scoringGuidance: decodeHtmlEntitiesDeep(q.scoringGuidance || ""),
+    rubric: decodeHtmlEntitiesDeep(q.rubric || ""),
     choices
   };
 }
+function getPartLabel(q) {
+  const part = String(q.part || "").trim();
+  const credits = Number(q.credits || 0);
+  const creditText = credits ? `${credits} credit${credits === 1 ? "" : "s"}` : "";
+  return [part ? `Part ${part}` : "", creditText].filter(Boolean).join(" — ");
+}
 
+function getDefaultInstruction(q) {
+  if (q.itemType === "constructed_response") {
+    return "Show your work. Use the response box to write your reasoning and final answer.";
+  }
+
+  return "Select one answer choice.";
+}
+
+function answerDraftKey(examId, sectionId, qid) {
+  return `constructedDraft_${examId}_${sectionId}_${qid}`;
+}
 async function loadQuestionsForSection(examId, section) {
   const files = (section.examFiles && section.examFiles.length)
     ? section.examFiles
@@ -287,31 +317,74 @@ if (metaEl) metaEl.textContent = metaText;
       qs("metaLine").textContent = metaText;
 
     qs("progress").textContent = `Question ${idx + 1} of ${sessionQs.length}`;
+
+    const partEl = qs("itemPart");
+    if (partEl) partEl.textContent = getPartLabel(q);
+
+    const instructionEl = qs("itemInstruction");
+    if (instructionEl) instructionEl.textContent = q.instruction || getDefaultInstruction(q);
+
     qs("prompt").innerHTML = renderInlineMarkup(q.prompt);
 
     const box = qs("choices");
     box.innerHTML = "";
-    ["A","B","C","D"].forEach(letter => {
-      const row = document.createElement("label");
-      row.className = "choice";
 
-      const input = document.createElement("input");
-      input.type = "radio";
-      input.name = "choice";
-      input.value = letter;
-      input.checked = answers[q.id] === letter;
+    if (q.itemType === "constructed_response") {
+      const wrap = document.createElement("div");
+      wrap.className = "constructedWrap";
 
-      input.addEventListener("change", () => {
-        answers[q.id] = letter;
+      const label = document.createElement("label");
+      label.className = "label";
+      label.textContent = "Your Response";
+
+      const textarea = document.createElement("textarea");
+      textarea.className = "essayBox";
+      textarea.placeholder = "Write your work, reasoning, and final answer here.";
+
+      const draftKey = answerDraftKey(examId, sectionId, q.id);
+      const saved = answers[q.id] ?? localStorage.getItem(draftKey) ?? "";
+      textarea.value = saved;
+      answers[q.id] = saved;
+
+      textarea.addEventListener("input", () => {
+        answers[q.id] = textarea.value;
+        localStorage.setItem(draftKey, textarea.value);
       });
 
-      const span = document.createElement("span");
-      span.className = "choiceText";
-      span.innerHTML = `${letter}. ${renderInlineMarkup(q.choices[letter])}`;
-      row.appendChild(input);
-      row.appendChild(span);
-      box.appendChild(row);
-    });
+      const helper = document.createElement("p");
+      helper.className = "helper";
+      helper.textContent = "Your response is saved automatically in this browser.";
+
+      wrap.appendChild(label);
+      wrap.appendChild(textarea);
+      wrap.appendChild(helper);
+      box.appendChild(wrap);
+    } else {
+      ["A","B","C","D"].forEach(letter => {
+        if (!q.choices || q.choices[letter] == null) return;
+
+        const row = document.createElement("label");
+        row.className = "choice";
+
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `choice_${q.id}`;
+        input.value = letter;
+        input.checked = answers[q.id] === letter;
+
+        input.addEventListener("change", () => {
+          answers[q.id] = letter;
+        });
+
+        const span = document.createElement("span");
+        span.className = "choiceText";
+        span.innerHTML = `${letter}. ${renderInlineMarkup(q.choices[letter])}`;
+
+        row.appendChild(input);
+        row.appendChild(span);
+        box.appendChild(row);
+      });
+    }
 
     qs("prevBtn").disabled = idx === 0;
     qs("nextBtn").disabled = idx === sessionQs.length - 1;
@@ -322,51 +395,100 @@ if (metaEl) metaEl.textContent = metaText;
 
     const elapsedSec = Math.floor((Date.now() - startTime) / 1000);
 
+    const mcqQs = sessionQs.filter(q => q.itemType !== "constructed_response");
+    const constructedQs = sessionQs.filter(q => q.itemType === "constructed_response");
+
     let correct = 0;
-    sessionQs.forEach(q => {
-      if ((answers[q.id] || "") === q.correct) correct++;
+    let earnedAutoCredits = 0;
+    let possibleAutoCredits = 0;
+    let possibleConstructedCredits = 0;
+
+    mcqQs.forEach(q => {
+      const credits = Number(q.credits || 0);
+      possibleAutoCredits += credits;
+      if ((answers[q.id] || "") === q.correct) {
+        correct++;
+        earnedAutoCredits += credits;
+      }
     });
 
-    const pct = Math.round((correct / sessionQs.length) * 100);
+    constructedQs.forEach(q => {
+      possibleConstructedCredits += Number(q.credits || 0);
+    });
+
+    const pct = mcqQs.length ? Math.round((correct / mcqQs.length) * 100) : 0;
 
     qs("runnerPanel").classList.add("hidden");
     qs("resultsPanel").classList.remove("hidden");
 
-    qs("scoreLine").textContent = `Score: ${pct}% (${correct}/${sessionQs.length} correct)`;
+    qs("scoreLine").textContent =
+      `Auto-scored MCQ: ${pct}% (${correct}/${mcqQs.length} correct, ${earnedAutoCredits}/${possibleAutoCredits} credits). ` +
+      `Constructed responses: ${constructedQs.length} question${constructedQs.length === 1 ? "" : "s"} for self-review` +
+      `${possibleConstructedCredits ? ` (${possibleConstructedCredits} possible credits).` : "."}`;
+
     qs("timeLine").textContent = `Time used: ${fmtTime(elapsedSec)}`;
 
     const review = qs("review");
     review.innerHTML = "";
 
     sessionQs.forEach((q, i) => {
+      const isConstructed = q.itemType === "constructed_response";
       const user = answers[q.id] || "(no answer)";
-      const ok = user === q.correct;
+      const ok = !isConstructed && user === q.correct;
 
       const block = document.createElement("div");
       block.className = "reviewBlock";
 
       const num = document.createElement("div");
-      num.className = ok ? "qnum qnum-ok" : "qnum qnum-bad";
+      num.className = isConstructed ? "qnum" : (ok ? "qnum qnum-ok" : "qnum qnum-bad");
       num.textContent = `Q${i + 1}`;
 
       const text = document.createElement("div");
       text.className = "reviewText";
 
+      const part = document.createElement("div");
+      part.className = "reviewAns";
+      part.textContent = getPartLabel(q);
+
       const p = document.createElement("div");
       p.className = "reviewPrompt";
       p.innerHTML = renderInlineMarkup(q.prompt);
 
-      const a = document.createElement("div");
-      a.className = "reviewAns";
-      a.textContent = `Your answer: ${user}    |    Correct: ${q.correct}`;
-
-      const ex = document.createElement("div");
-      ex.className = "reviewExp";
-      ex.textContent = q.explanation;
-
+      text.appendChild(part);
       text.appendChild(p);
-      text.appendChild(a);
-      text.appendChild(ex);
+
+      if (isConstructed) {
+        const a = document.createElement("div");
+        a.className = "reviewAns";
+        a.textContent = `Your response: ${user}`;
+
+        const model = document.createElement("div");
+        model.className = "reviewExp";
+        model.innerHTML = q.modelAnswer
+          ? `<strong>Model answer:</strong><br>${renderInlineMarkup(q.modelAnswer)}`
+          : "<strong>Model answer:</strong><br>Review the scoring guidance for this response.";
+
+        const guidance = document.createElement("div");
+        guidance.className = "reviewExp";
+        guidance.innerHTML = q.scoringGuidance || q.rubric
+          ? `<strong>Scoring guidance:</strong><br>${renderInlineMarkup(q.scoringGuidance || q.rubric)}`
+          : "<strong>Scoring guidance:</strong><br>No rubric provided for this item.";
+
+        text.appendChild(a);
+        text.appendChild(model);
+        text.appendChild(guidance);
+      } else {
+        const a = document.createElement("div");
+        a.className = "reviewAns";
+        a.textContent = `Your answer: ${user}    |    Correct: ${q.correct}`;
+
+        const ex = document.createElement("div");
+        ex.className = "reviewExp";
+        ex.textContent = q.explanation;
+
+        text.appendChild(a);
+        text.appendChild(ex);
+      }
 
       block.appendChild(num);
       block.appendChild(text);
