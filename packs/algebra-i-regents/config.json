@@ -1,0 +1,24 @@
+{
+  "examId": "algebra-i-regents",
+  "brandName": "Algebra I Regents Exam Simulator",
+  "theme": "dark",
+  "logoPath": "../packs/algebra-i-regents/assets/logo.png?v=1",
+  "accessPassword": "ALGEBRAI2026",
+  "practiceChunkSize": 10,
+  "nav": [
+    "Home",
+    "Exam Simulator",
+    "Printable Practice Exams"
+  ],
+  "sections": [
+    {
+      "id": "algebra-i-regents",
+      "label": "Algebra I Regents Full Exam",
+      "timeMin": 180,
+      "examQuestions": 35,
+      "type": "mixed",
+      "examFiles": []
+    }
+  ],
+  "printables": []
+}
