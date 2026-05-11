@@ -17,7 +17,9 @@
       "timeMin": 180,
       "examQuestions": 35,
       "type": "mixed",
-      "examFiles": []
+      "examFiles": [
+  "algebra_i_regents_exam_01.json"
+]
     }
   ],
   "printables": []

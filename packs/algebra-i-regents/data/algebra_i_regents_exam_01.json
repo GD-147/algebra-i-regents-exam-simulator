@@ -1,0 +1,472 @@
+[
+  {
+    "id": "AI1-001",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "What is the solution to 3(2x − 5) = 27?",
+    "choices": {
+      "A": "2",
+      "B": "7",
+      "C": "9",
+      "D": "14"
+    },
+    "correct": "B",
+    "explanation": "Distribute to get 6x − 15 = 27, then solve 6x = 42, so x = 7."
+  },
+  {
+    "id": "AI1-002",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "A function is represented by the values below. x: 0, 2, 4, 6 f(x): 5, 11, 17, 23 What is the rate of change of the function?",
+    "choices": {
+      "A": "3",
+      "B": "5",
+      "C": "6",
+      "D": "9"
+    },
+    "correct": "A",
+    "explanation": "For every increase of 2 in x, f(x) increases by 6, so the rate of change is 6/2 = 3."
+  },
+  {
+    "id": "AI1-003",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "Which expression is equivalent to 4x² − 9?",
+    "choices": {
+      "A": "(2x − 3)(2x + 3)",
+      "B": "(4x − 3)(x + 3)",
+      "C": "(2x − 9)(2x + 1)",
+      "D": "(4x − 9)(x + 1)"
+    },
+    "correct": "A",
+    "explanation": "4x² − 9 is a difference of squares: (2x)² − 3² = (2x − 3)(2x + 3)."
+  },
+  {
+    "id": "AI1-004",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "A taxi company charges a flat fee of $4 plus $2.50 per mile. Which function represents the total cost, C(m), for a ride of m miles?",
+    "choices": {
+      "A": "C(m) = 4m + 2.50",
+      "B": "C(m) = 2.50m + 4",
+      "C": "C(m) = 6.50m",
+      "D": "C(m) = 4(m + 2.50)"
+    },
+    "correct": "B",
+    "explanation": "The cost is $2.50 per mile plus a fixed fee of $4."
+  },
+  {
+    "id": "AI1-005",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "The expression (3x⁴)(2x³) is equivalent to",
+    "choices": {
+      "A": "5x⁷",
+      "B": "6x⁷",
+      "C": "6x¹²",
+      "D": "9x¹²"
+    },
+    "correct": "B",
+    "explanation": "Multiply the coefficients and add the exponents: (3x⁴)(2x³) = 6x⁷."
+  },
+  {
+    "id": "AI1-006",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "Which ordered pair is a solution to the system of equations below? y = 2x + 1 y = −x + 7",
+    "choices": {
+      "A": "(1, 3)",
+      "B": "(2, 5)",
+      "C": "(3, 7)",
+      "D": "(4, 3)"
+    },
+    "correct": "B",
+    "explanation": "Substituting x = 2 gives y = 5 in both equations."
+  },
+  {
+    "id": "AI1-007",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "A sequence is defined by a₁ = 8 and aₙ = aₙ₋₁ + 6 for n > 1. What is the fourth term of the sequence?",
+    "choices": {
+      "A": "14",
+      "B": "20",
+      "C": "26",
+      "D": "32"
+    },
+    "correct": "C",
+    "explanation": "The terms are 8, 14, 20, 26, so the fourth term is 26."
+  },
+  {
+    "id": "AI1-008",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "Which value of x makes the inequality 5x − 4 ≤ 16 true?",
+    "choices": {
+      "A": "x ≤ 4",
+      "B": "x ≥ 4",
+      "C": "x ≤ 12/5",
+      "D": "x ≥ 12/5"
+    },
+    "correct": "A",
+    "explanation": "5x − 4 ≤ 16 gives 5x ≤ 20, so x ≤ 4."
+  },
+  {
+    "id": "AI1-009",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "The function h(t) = 120(0.85)^t models the amount of a substance remaining after t hours. What does 0.85 represent in this situation?",
+    "choices": {
+      "A": "The substance increases by 85% each hour.",
+      "B": "The substance decreases by 85% each hour.",
+      "C": "The substance remains at 85% of the previous hour’s amount.",
+      "D": "The initial amount of the substance is 85 grams."
+    },
+    "correct": "C",
+    "explanation": "A factor of 0.85 means 85% remains each hour."
+  },
+  {
+    "id": "AI1-010",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "Which equation has a graph with a y-intercept of −6 and a slope of 3?",
+    "choices": {
+      "A": "y = −6x + 3",
+      "B": "y = 3x − 6",
+      "C": "y = 6x − 3",
+      "D": "y = −3x + 6"
+    },
+    "correct": "B",
+    "explanation": "In slope-intercept form y = mx + b, the slope is 3 and the y-intercept is −6."
+  },
+  {
+    "id": "AI1-011",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "What are the zeros of the function f(x) = x² − 5x − 14?",
+    "choices": {
+      "A": "−7 and 2",
+      "B": "−2 and 7",
+      "C": "2 and 7",
+      "D": "−14 and 1"
+    },
+    "correct": "B",
+    "explanation": "x² − 5x − 14 factors as (x − 7)(x + 2), so the zeros are 7 and −2."
+  },
+  {
+    "id": "AI1-012",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "A line passes through the points (−1, 4) and (3, 12). What is the slope of the line?",
+    "choices": {
+      "A": "1/2",
+      "B": "2",
+      "C": "4",
+      "D": "8"
+    },
+    "correct": "B",
+    "explanation": "The slope is (12 − 4)/(3 − (−1)) = 8/4 = 2."
+  },
+  {
+    "id": "AI1-013",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "The function p(x) = −2x² + 8x + 10 is written in standard form. What is the axis of symmetry?",
+    "choices": {
+      "A": "x = −2",
+      "B": "x = 2",
+      "C": "x = 4",
+      "D": "x = 10"
+    },
+    "correct": "B",
+    "explanation": "The axis of symmetry is x = −b/(2a) = −8/(2 · −2) = 2."
+  },
+  {
+    "id": "AI1-014",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "Which expression is equivalent to √50?",
+    "choices": {
+      "A": "5√2",
+      "B": "10√5",
+      "C": "25√2",
+      "D": "2√25"
+    },
+    "correct": "A",
+    "explanation": "√50 = √(25 · 2) = 5√2."
+  },
+  {
+    "id": "AI1-015",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "A student recorded the number of pages read each day for seven days: 18, 22, 24, 24, 30, 34, 44 What is the median number of pages read?",
+    "choices": {
+      "A": "24",
+      "B": "26",
+      "C": "28",
+      "D": "30"
+    },
+    "correct": "A",
+    "explanation": "With seven ordered values, the median is the fourth value, which is 24."
+  },
+  {
+    "id": "AI1-016",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "Which equation represents a line parallel to y = −4x + 9?",
+    "choices": {
+      "A": "y = 4x − 9",
+      "B": "y = −4x − 2",
+      "C": "y = 1/4x + 9",
+      "D": "y = −1/4x − 2"
+    },
+    "correct": "B",
+    "explanation": "Parallel lines have the same slope, and this equation has slope −4."
+  },
+  {
+    "id": "AI1-017",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "The solution to 2x + 7 = x − 5 is",
+    "choices": {
+      "A": "−12",
+      "B": "−2",
+      "C": "2",
+      "D": "12"
+    },
+    "correct": "A",
+    "explanation": "2x + 7 = x − 5 gives x + 7 = −5, so x = −12."
+  },
+  {
+    "id": "AI1-018",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "The table below shows a linear relationship. x: 1, 2, 3, 4 y: 9, 13, 17, 21 Which equation represents the relationship?",
+    "choices": {
+      "A": "y = 4x + 5",
+      "B": "y = 5x + 4",
+      "C": "y = 4x + 9",
+      "D": "y = 9x + 4"
+    },
+    "correct": "A",
+    "explanation": "The y-values increase by 4 for each increase of 1 in x, and substituting x = 1 gives 9 = 4(1) + 5."
+  },
+  {
+    "id": "AI1-019",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "Which expression is equivalent to (x + 6)(x − 4)?",
+    "choices": {
+      "A": "x² + 2x − 24",
+      "B": "x² − 2x − 24",
+      "C": "x² + 10x − 24",
+      "D": "x² + 2x + 24"
+    },
+    "correct": "A",
+    "explanation": "(x + 6)(x − 4) = x² − 4x + 6x − 24 = x² + 2x − 24."
+  },
+  {
+    "id": "AI1-020",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "A data set has a correlation coefficient of −0.92. Which statement best describes the relationship between the two variables?",
+    "choices": {
+      "A": "There is a strong positive linear relationship.",
+      "B": "There is a weak positive linear relationship.",
+      "C": "There is a strong negative linear relationship.",
+      "D": "There is no linear relationship."
+    },
+    "correct": "C",
+    "explanation": "A correlation coefficient close to −1 indicates a strong negative linear relationship."
+  },
+  {
+    "id": "AI1-021",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "The value of a computer is modeled by V(t) = 900(0.72)^t, where t is the number of years after purchase. What was the initial value of the computer?",
+    "choices": {
+      "A": "$0.72",
+      "B": "$72",
+      "C": "$648",
+      "D": "$900"
+    },
+    "correct": "D",
+    "explanation": "In V(t) = 900(0.72)^t, the initial value occurs when t = 0 and is 900."
+  },
+  {
+    "id": "AI1-022",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "Which equation is equivalent to 6x − 2y = 10 when solved for y?",
+    "choices": {
+      "A": "y = 3x − 5",
+      "B": "y = −3x + 5",
+      "C": "y = 6x − 10",
+      "D": "y = −6x + 10"
+    },
+    "correct": "A",
+    "explanation": "6x − 2y = 10 gives −2y = −6x + 10, so y = 3x − 5."
+  },
+  {
+    "id": "AI1-023",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "If f(x) = 2x² − 3x + 1, what is f(−2)?",
+    "choices": {
+      "A": "−13",
+      "B": "3",
+      "C": "11",
+      "D": "15"
+    },
+    "correct": "D",
+    "explanation": "f(−2) = 2(−2)² − 3(−2) + 1 = 8 + 6 + 1 = 15."
+  },
+  {
+    "id": "AI1-024",
+    "part": "I",
+    "type": "mcq",
+    "credits": 2,
+    "prompt": "A school sells adult tickets and student tickets for a play. Adult tickets cost $8 each, and student tickets cost $5 each. If a represents the number of adult tickets and s represents the number of student tickets, which inequality represents earning at least $600?",
+    "choices": {
+      "A": "8a + 5s ≤ 600",
+      "B": "8a + 5s ≥ 600",
+      "C": "5a + 8s ≤ 600",
+      "D": "5a + 8s ≥ 600"
+    },
+    "correct": "B",
+    "explanation": "Adult tickets bring in 8a dollars, student tickets bring in 5s dollars, and “at least $600” means greater than or equal to 600."
+  },
+  {
+    "id": "AI1-025",
+    "part": "II",
+    "type": "constructed_response",
+    "credits": 2,
+    "prompt": "Solve the equation 4(x − 3) + 2 = 3x + 9. Show your work.",
+    "modelAnswer": "4(x − 3) + 2 = 3x + 9 4x − 12 + 2 = 3x + 9 4x − 10 = 3x + 9 x − 10 = 9 x = 19",
+    "scoringGuidance": "A complete response correctly distributes, combines like terms, isolates x, and gives x = 19.",
+    "rubric": "Score 2: Correctly solves the equation and shows sufficient algebraic work. Score 1: Shows a valid method with one computational or algebraic error, or reaches the correct answer with minimal work. Score 0: Shows no valid method, gives an incorrect answer without support, or leaves the response blank."
+  },
+  {
+    "id": "AI1-026",
+    "part": "II",
+    "type": "constructed_response",
+    "credits": 2,
+    "prompt": "The function g(x) = 3x − 7 is given. Find g(5) and explain what this value means in terms of the function.",
+    "modelAnswer": "g(5) = 3(5) − 7 = 15 − 7 = 8. This means that when the input value is 5, the output value of the function is 8.",
+    "scoringGuidance": "A complete response evaluates the function correctly and explains the input-output meaning.",
+    "rubric": "Score 2: Correctly finds g(5) = 8 and gives a clear interpretation. Score 1: Correctly evaluates g(5) but gives little or no interpretation, or gives a mostly correct interpretation with a minor arithmetic error. Score 0: Does not correctly evaluate the function or gives no meaningful explanation."
+  },
+  {
+    "id": "AI1-027",
+    "part": "II",
+    "type": "constructed_response",
+    "credits": 2,
+    "prompt": "A linear model for the cost, C, in dollars, of printing brochures is C = 0.18b + 12, where b is the number of brochures printed. Interpret the meaning of 0.18 and 12 in this context.",
+    "modelAnswer": "The value 0.18 means each brochure costs $0.18 to print. The value 12 means there is a fixed cost of $12 before any brochures are printed.",
+    "scoringGuidance": "A complete response correctly interprets both the rate of change and the initial value in context.",
+    "rubric": "Score 2: Correctly interprets both 0.18 and 12 in context. Score 1: Correctly interprets one of the two values, or gives partially correct interpretations. Score 0: Gives incorrect interpretations or no relevant response."
+  },
+  {
+    "id": "AI1-028",
+    "part": "II",
+    "type": "constructed_response",
+    "credits": 2,
+    "prompt": "Solve the inequality −2x + 5 > 13. Show your work and write the solution set.",
+    "modelAnswer": "−2x + 5 > 13 −2x > 8 x < −4 The solution set is x < −4.",
+    "scoringGuidance": "A complete response isolates x and reverses the inequality sign when dividing by −2.",
+    "rubric": "Score 2: Correctly solves the inequality and writes x < −4 with supporting work. Score 1: Shows a valid method but makes one error, such as not reversing the inequality sign. Score 0: Shows no valid method or gives no meaningful solution."
+  },
+  {
+    "id": "AI1-029",
+    "part": "II",
+    "type": "constructed_response",
+    "credits": 2,
+    "prompt": "Factor the expression x² + 9x + 20 completely. Then use your factors to identify the zeros of the function f(x) = x² + 9x + 20.",
+    "modelAnswer": "x² + 9x + 20 = (x + 4)(x + 5). Setting each factor equal to zero gives x + 4 = 0 or x + 5 = 0, so the zeros are x = −4 and x = −5.",
+    "scoringGuidance": "A complete response gives the correct factorization and uses it to find both zeros.",
+    "rubric": "Score 2: Correctly factors the expression and identifies both zeros. Score 1: Correctly factors but does not identify both zeros, or makes one minor error. Score 0: Does not correctly factor the expression or gives no meaningful response."
+  },
+  {
+    "id": "AI1-030",
+    "part": "II",
+    "type": "constructed_response",
+    "credits": 2,
+    "prompt": "The data below show the number of minutes six students studied and their quiz scores. Minutes studied: 10, 20, 30, 40, 50, 60 Quiz score: 62, 68, 74, 77, 84, 88 Describe the association between minutes studied and quiz score. Explain your answer.",
+    "modelAnswer": "The data show a positive association. As the number of minutes studied increases, the quiz score generally increases.",
+    "scoringGuidance": "A complete response identifies a positive association and supports it using the trend in the data.",
+    "rubric": "Score 2: Correctly identifies the positive association and explains it using the data. Score 1: Correctly identifies the association but gives little or unclear explanation. Score 0: Gives an incorrect association or no meaningful explanation."
+  },
+  {
+    "id": "AI1-031",
+    "part": "III",
+    "type": "constructed_response",
+    "credits": 4,
+    "prompt": "A community center charges a one-time registration fee plus a monthly membership fee. The total cost after 4 months is $110. The total cost after 9 months is $210. Write a linear equation that models the total cost, C, after m months. Show your work. Then use your equation to find the total cost after 12 months.",
+    "modelAnswer": "Use the points (4, 110) and (9, 210). The slope is (210 − 110)/(9 − 4) = 100/5 = 20. The monthly membership fee is $20. Use C = 20m + b. Substitute (4, 110): 110 = 20(4) + b, so 110 = 80 + b and b = 30. The equation is C = 20m + 30. For 12 months, C = 20(12) + 30 = 240 + 30 = 270. The total cost after 12 months is $270.",
+    "scoringGuidance": "A complete response finds the rate of change, determines the initial fee, writes the correct model, and uses it to answer the question.",
+    "rubric": "Score 4: Correctly finds the slope, writes C = 20m + 30, and correctly finds $270 with clear work. Score 3: Correct method and mostly correct work with one minor arithmetic or notation error. Score 2: Shows partial understanding, such as finding the slope correctly but not completing the model or final value. Score 1: Shows limited relevant work, such as identifying one correct ordered pair or attempting slope. Score 0: Shows no valid method or no meaningful response."
+  },
+  {
+    "id": "AI1-032",
+    "part": "III",
+    "type": "constructed_response",
+    "credits": 4,
+    "prompt": "Solve the system of equations algebraically. Show your work. 2x + y = 17 x − y = 4 Then verify your solution in both original equations.",
+    "modelAnswer": "From x − y = 4, y = x − 4. Substitute into 2x + y = 17: 2x + (x − 4) = 17 3x − 4 = 17 3x = 21 x = 7 Then y = 7 − 4 = 3. The solution is (7, 3). Check: 2(7) + 3 = 14 + 3 = 17 7 − 3 = 4 The solution satisfies both equations.",
+    "scoringGuidance": "A complete response solves the system correctly and verifies the solution in both equations.",
+    "rubric": "Score 4: Correctly solves for x and y and verifies the solution in both equations. Score 3: Correctly solves the system but verification is incomplete or contains a minor error. Score 2: Uses a valid algebraic method but makes an error that leads to an incorrect solution. Score 1: Shows limited relevant work, such as correctly rearranging one equation or substituting. Score 0: Shows no valid method or no meaningful response."
+  },
+  {
+    "id": "AI1-033",
+    "part": "III",
+    "type": "constructed_response",
+    "credits": 4,
+    "prompt": "A ball is thrown upward from a platform. Its height, h, in feet, after t seconds is modeled by h(t) = −16t² + 48t + 64. Find the height of the platform. Then find the time when the ball reaches its maximum height and the maximum height of the ball. Show your work.",
+    "modelAnswer": "The height of the platform is the initial height, h(0). h(0) = −16(0)² + 48(0) + 64 = 64, so the platform is 64 feet high. For h(t) = −16t² + 48t + 64, a = −16 and b = 48. The time at the maximum height is t = −b/(2a) = −48/(2 · −16) = −48/−32 = 1.5 seconds. h(1.5) = −16(1.5)² + 48(1.5) + 64 h(1.5) = −16(2.25) + 72 + 64 h(1.5) = −36 + 72 + 64 = 100 The ball reaches a maximum height of 100 feet after 1.5 seconds.",
+    "scoringGuidance": "A complete response identifies the initial height, uses the vertex formula or equivalent reasoning, and calculates the maximum height correctly.",
+    "rubric": "Score 4: Correctly finds the platform height, time of maximum height, and maximum height with clear work. Score 3: Correct process with one minor arithmetic or interpretation error. Score 2: Correctly finds either the initial height or the vertex information, but not both completely. Score 1: Shows limited relevant work, such as substituting t = 0 or identifying a and b. Score 0: Shows no valid method or no meaningful response."
+  },
+  {
+    "id": "AI1-034",
+    "part": "III",
+    "type": "constructed_response",
+    "credits": 4,
+    "prompt": "A researcher collected data comparing the number of hours a phone battery was used and the percent of battery charge remaining. Hours used: 1, 2, 3, 4, 5 Percent remaining: 86, 72, 61, 47, 34 A linear model for the data is p = −13h + 99, where h is the number of hours used and p is the predicted percent remaining. Find the predicted percent remaining after 4 hours. Then find the residual for the actual data point when h = 4. Explain what the residual means in context.",
+    "modelAnswer": "For h = 4, p = −13(4) + 99 = −52 + 99 = 47. The predicted percent remaining is 47%. The actual percent remaining when h = 4 is 47%. The residual is actual − predicted, so residual = 47 − 47 = 0. A residual of 0 means the model’s prediction exactly matches the actual battery percent remaining after 4 hours.",
+    "scoringGuidance": "A complete response calculates the prediction, computes the residual correctly, and explains its meaning in context.",
+    "rubric": "Score 4: Correctly finds the prediction, residual, and contextual interpretation. Score 3: Correct calculation with a minor omission or unclear explanation. Score 2: Correctly finds either the prediction or residual but gives incomplete interpretation. Score 1: Shows limited relevant work, such as substituting h = 4 into the model. Score 0: Shows no valid method or no meaningful response."
+  },
+  {
+    "id": "AI1-035",
+    "part": "IV",
+    "type": "constructed_response",
+    "credits": 6,
+    "prompt": "A small company makes custom water bottles. The company has a fixed weekly cost of $360 for equipment and workspace. Each water bottle costs $4 to make and is sold for $10. Let x represent the number of water bottles made and sold in one week. Write an expression for the company’s weekly cost. Write an expression for the company’s weekly revenue. Write an equation that can be solved to find the break-even point. Solve the equation and explain what the solution means in context. Then determine the profit if the company makes and sells 95 water bottles in one week. Show all work.",
+    "modelAnswer": "The weekly cost includes the fixed cost plus $4 per bottle, so the cost expression is 360 + 4x. The weekly revenue is $10 per bottle, so the revenue expression is 10x. At the break-even point, revenue equals cost: 10x = 360 + 4x 6x = 360 x = 60 The company breaks even when it makes and sells 60 water bottles. At that point, the revenue and cost are equal, so the profit is $0. For 95 bottles: Revenue = 10(95) = 950 Cost = 360 + 4(95) = 360 + 380 = 740 Profit = revenue − cost = 950 − 740 = 210 If the company makes and sells 95 water bottles in one week, the profit is $210.",
+    "scoringGuidance": "A complete response correctly models cost and revenue, sets and solves the break-even equation, explains the break-even point, and calculates profit for 95 bottles.",
+    "rubric": "Score 6: Correctly writes cost and revenue expressions, sets up and solves the break-even equation, explains the meaning of x = 60, and correctly finds a $210 profit. Score 5: Complete and mostly correct response with one minor arithmetic, notation, or explanation error. Score 4: Correctly models and solves the break-even point but gives incomplete or incorrect profit work, or correctly finds profit with incomplete break-even explanation. Score 3: Shows a valid approach with several correct components but has significant omissions or one major error. Score 2: Shows partial understanding, such as writing one correct expression and attempting an equation or profit calculation. Score 1: Shows limited relevant work, such as identifying one correct value from the context. Score 0: Shows no valid method or no meaningful response."
+  }
+]
