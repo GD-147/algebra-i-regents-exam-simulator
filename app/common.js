@@ -2,7 +2,7 @@
 
 function getExamFromUrl() {
   const params = new URLSearchParams(window.location.search);
-  return (params.get("exam") || "pmp").toLowerCase();
+  return (params.get("exam") || "algebra-i-regents").toLowerCase();
 }
 
 function getConfigPath(examId) {
